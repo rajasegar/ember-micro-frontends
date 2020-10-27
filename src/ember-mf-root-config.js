@@ -1,5 +1,4 @@
-import { registerApplication, start } from "single-spa";
-/*
+import { registerApplication, start, getApps } from "single-spa";
 import {
   constructApplications,
   constructRoutes,
@@ -7,21 +6,21 @@ import {
 } from "single-spa-layout";
 
 const routes = constructRoutes(document.querySelector("#single-spa-layout"));
+
+/*
 const applications = constructApplications({
   routes,
   loadApp({ name }) {
     return System.import(name);
   },
 });
-const layoutEngine = constructLayoutEngine({ routes, applications });
-
-applications.forEach(registerApplication);
-layoutEngine.activate();
 */
+
+//applications.forEach(registerApplication);
 
 import { loadEmberApp } from "single-spa-ember";
 
-registerApplication(
+const planetsApp = registerApplication(
   "planets",
   () => {
     const appName = "planets";
@@ -32,7 +31,7 @@ registerApplication(
   (location) => location.pathname.startsWith("/planets")
 );
 
-registerApplication(
+const peopleApp = registerApplication(
   "people",
   () => {
     const appName = "people";
@@ -43,4 +42,8 @@ registerApplication(
   (location) => location.pathname.startsWith("/people")
 );
 
+const applications = [planetsApp, peopleApp];
+
+const layoutEngine = constructLayoutEngine({ routes, applications });
+layoutEngine.activate();
 start();
