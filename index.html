@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ember Microfrontends</title>
+    <meta name="importmap-type" content="systemjs-importmap" />
+     <script type="systemjs-importmap" src="https://storage.googleapis.com/react.microfrontends.app/importmap.json"></script>
+
+    <script type="systemjs-importmap">
+      {
+      "imports": {
+        "root-config": "http://localhost:9000/root-application.js"
+      }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.min.js"></script>
+  </head>
+  <body>
+    <script>
+      System.import('root-config');
+      System.import('@react-mf/styleguide');
+    </script>
+    Hello World  single spa online!
+    <p>
+    <a href="/">Home</a>
+    <a href="/planets">Planets</a>
+    <a href="/people">People</a>
+    </p> 
+    <div id="planets"></div>
+    <div id="people"></div>
+    <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+  </body>
+</html>
