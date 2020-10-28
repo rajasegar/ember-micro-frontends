@@ -1,0 +1,7 @@
+<div class="planetList">
+  {{#each @people as |p|}}
+  <LinkTo @route="index" @query={{hash id=p.id}} class="h-12 flex items-center border-white border-b cursor-pointer no-underline">
+    {{p.name}} 
+  </LinkTo>
+  {{/each}}
+</div>

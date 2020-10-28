@@ -24,8 +24,8 @@ const planetsApp = registerApplication(
   "planets",
   () => {
     const appName = "planets";
-    const appUrl = "/planets/planets.js";
-    const vendorUrl = "/planets/vendor.js";
+    const appUrl = "http://localhost:4200/planets/assets/planets.js";
+    const vendorUrl = "http://localhost:4200/planets/assets/vendor.js";
     return loadEmberApp(appName, appUrl, vendorUrl);
   },
   (location) => location.pathname.startsWith("/planets")
@@ -35,8 +35,8 @@ const peopleApp = registerApplication(
   "people",
   () => {
     const appName = "people";
-    const appUrl = "/people/people.js";
-    const vendorUrl = "/people/vendor.js";
+    const appUrl = "http://localhost:4201/people/assets/people.js";
+    const vendorUrl = "http://localhost:4201/people/assets/vendor.js";
     return loadEmberApp(appName, appUrl, vendorUrl);
   },
   (location) => location.pathname.startsWith("/people")

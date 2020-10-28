@@ -85,22 +85,6 @@ module.exports = {
           from: path.join(__dirname, "index.html"),
           to: path.join(__dirname, "dist"),
         },
-        {
-          from: path.join(__dirname, "src/planets/dist/assets/planets.js"),
-          to: path.join(__dirname, "dist/planets"),
-        },
-        {
-          from: path.join(__dirname, "src/planets/dist/assets/vendor.js"),
-          to: path.join(__dirname, "dist/planets"),
-        },
-        {
-          from: path.join(__dirname, "src/people/dist/assets/people.js"),
-          to: path.join(__dirname, "dist/people"),
-        },
-        {
-          from: path.join(__dirname, "src/people/dist/assets/vendor.js"),
-          to: path.join(__dirname, "dist/people"),
-        },
       ],
     }),
   ],
